@@ -1,0 +1,37 @@
+spring:
+  servlet:
+    multipart:
+      max-file-size: 25MB
+      max-request-size: 25MB
+  application:
+    name: video-storage-api
+  security:
+    user:
+      name: username
+      password: password
+      roles: "admin"
+  config:
+    activate:
+      on-profile: local
+  data:
+    mongodb:
+      database: demodb
+management:
+  endpoint:
+    health:
+      show-components: when_authorized
+      show-details: when_authorized
+      roles: "admin"
+      probes:
+        enabled: true
+    restart:
+      enabled: true
+    loggers:
+      enabled: true
+  endpoints:
+    web:
+      exposure:
+        include: 'health,info,prometheus,loggers'
+server:
+  max-http-header-size: 20KB
+  port: 8080
