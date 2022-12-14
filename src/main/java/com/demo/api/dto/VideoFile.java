@@ -5,12 +5,13 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.util.List;
+import java.io.InputStream;
 
 @Builder
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class FileList {
-    List<FileResponseDto> data;
+public class VideoFile {
+    private String fileName;
+    private InputStream data;
 }

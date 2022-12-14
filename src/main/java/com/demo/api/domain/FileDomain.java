@@ -17,10 +17,10 @@ import java.time.Instant;
 public class FileDomain {
 
     @Id
+    private String id;
     private String fileid;
     private String name;
     private Long size;
     private Instant createdAt;
-    private String data;
 
 }
