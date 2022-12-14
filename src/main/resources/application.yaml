@@ -20,9 +20,8 @@ spring:
 management:
   endpoint:
     health:
-      show-components: when_authorized
-      show-details: when_authorized
-      roles: "admin"
+      show-components: ALWAYS
+      show-details: ALWAYS
       probes:
         enabled: true
     restart:

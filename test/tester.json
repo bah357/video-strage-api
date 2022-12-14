@@ -27,7 +27,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{baseUrl}}/health",
+							"raw": "{{baseUrl}}/actuator/health",
 							"host": [
 								"{{baseUrl}}"
 							],
@@ -44,7 +44,7 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "{{baseUrl}}/health",
+									"raw": "{{baseUrl}}/actuator/health",
 									"host": [
 										"{{baseUrl}}"
 									],
