@@ -32,14 +32,14 @@
 								"{{baseUrl}}"
 							],
 							"path": [
-								"health"
+								"actuator/health"
 							]
 						},
-						"description": "Check service health"
+						"description": "Check service actuator health"
 					},
 					"response": [
 						{
-							"name": "Health",
+							"name": "Actuator Health",
 							"originalRequest": {
 								"method": "GET",
 								"header": [],
@@ -49,7 +49,7 @@
 										"{{baseUrl}}"
 									],
 									"path": [
-										"health"
+										"actuator/health"
 									]
 								}
 							},
