@@ -10,3 +10,11 @@ services:
     volumes:
       - ./init-mongo.js:/docker-entrypoint-initdb.d/mongo-init.js:ro
       - ./mongo-volume:/data/db
+  video-storage-server-api:
+    container_name: video-storage-server-api
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: video-storage-server-api:latest
+    ports:
+      - "8080:8080"
