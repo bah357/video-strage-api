@@ -5,7 +5,7 @@ info:
 servers:
   - url: http://localhost:8080/v1
 paths:
-  /health:
+  /actuator/health:
     get:
       description: Return the health of the service as HTTP 200 status. Useful to check if everything is configured correctly.
       responses:
