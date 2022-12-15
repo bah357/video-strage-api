@@ -93,7 +93,22 @@
 					],
 					"request": {
 						"method": "GET",
-						"header": ["Authorization=Basic dXNlcm5hbWU6cGFzc3dvcmQ="],
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "username",
+									"value": "username",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "password",
+									"type": "string"
+								}
+							]
+						},
+						"header": [],
 						"url": {
 							"raw": "{{baseUrl}}/files",
 							"host": [
