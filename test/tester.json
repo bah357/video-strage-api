@@ -93,7 +93,7 @@
 					],
 					"request": {
 						"method": "GET",
-						"header": [],
+						"header": ["Authorization=Basic dXNlcm5hbWU6cGFzc3dvcmQ="],
 						"url": {
 							"raw": "{{baseUrl}}/files",
 							"host": [
