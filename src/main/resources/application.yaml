@@ -17,6 +17,7 @@ spring:
   data:
     mongodb:
       database: demodb
+      uri: mongodb://127.0.0.1:27017/demodb
 management:
   endpoint:
     health:
