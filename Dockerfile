@@ -11,5 +11,5 @@ COPY ./build/libs/Video-Storage-Server-API-1.0.jar /data/
 EXPOSE 8080
 
 CMD ["java", "-Xmx1024m", "-XX:MaxMetaspaceSize=256m", "-jar", "Video-Storage-Server-API-1.0.jar"]
-ENTRYPOINT ["java", "-Dspring.profiles.active=local", "-jar", "Video-Storage-Server-API-1.0.jar"]
+ENTRYPOINT ["java", "-Dspring.profiles.active=local", "-Djava.security.egd=file:/dev/./urandom", "-jar", "Video-Storage-Server-API-1.0.jar"]
 
