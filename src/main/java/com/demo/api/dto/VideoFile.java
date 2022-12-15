@@ -13,5 +13,7 @@ import java.io.InputStream;
 @NoArgsConstructor
 public class VideoFile {
     private String fileName;
+    private String contentType;
+    private String contentDisposition;
     private InputStream data;
 }

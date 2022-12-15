@@ -82,7 +82,8 @@
 									"",
 									"        pm.sendRequest({",
 									"            url: pm.collectionVariables.get(\"baseUrl\")+\"/files/\"+fileid, ",
-									"            method: 'DELETE'",
+									"            method: 'DELETE',",
+									"            auth: {\n                \"type\": \"basic\",\n                \"basic\": [\n                    {\n                        \"key\": \"username\",\n                        \"value\": \"username\",\n                        \"type\": \"string\"\n                    },\n                    {\n                        \"key\": \"password\",\n                        \"value\": \"password\",\n                        \"type\": \"string\"\n                    }\n                ]\n            },",
 									"        });",
 									"    });",
 									"});"

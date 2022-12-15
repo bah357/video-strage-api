@@ -14,5 +14,5 @@ public class FileResponseDto {
     private String fileid;
     private String name;
     private Long size;
-    private String createdAt;
+    private String created_at;
 }

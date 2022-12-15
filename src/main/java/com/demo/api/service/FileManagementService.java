@@ -21,11 +21,11 @@ public class FileManagementService {
     private final FileRepository fileRepository;
     private final VideoService videoService;
 
-    public String saveFile(String fileName, MultipartFile multipartFile) throws IOException {
-        var fileid = videoService.addVideo(fileName, multipartFile);
+    public String saveFile(MultipartFile multipartFile) throws IOException {
+        var fileid = videoService.addVideo(multipartFile);
         var file = FileDomain.builder()
                 .fileid(fileid)
-                .name(fileName)
+                .name(multipartFile.getResource().getFilename())
                 .size(multipartFile.getSize())
                 .createdAt(Instant.now())
                 .build();
@@ -56,7 +56,7 @@ public class FileManagementService {
                 .fileid(fileDomain.getFileid())
                 .name(fileDomain.getName())
                 .size(fileDomain.getSize())
-                .createdAt(fileDomain.getCreatedAt().toString())
+                .created_at(fileDomain.getCreatedAt().toString())
                 .build();
     }
 }
