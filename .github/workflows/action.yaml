@@ -33,7 +33,7 @@ jobs:
         run: gradle clean build
 
       - name: Run Docker Compose
-        run: docker-compose up -d
+        run: docker-compose -f "docker-compose.yml" up -d --build
 
       #- name: Build docker tester
       - name: Run config check
