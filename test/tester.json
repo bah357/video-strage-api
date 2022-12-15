@@ -177,6 +177,21 @@
 					],
 					"request": {
 						"method": "DELETE",
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "username",
+									"value": "username",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "password",
+									"type": "string"
+								}
+							]
+						},
 						"header": [],
 						"url": {
 							"raw": "{{baseUrl}}/files/:fileid",
@@ -332,6 +347,21 @@
 					],
 					"request": {
 						"method": "GET",
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "username",
+									"value": "username",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "password",
+									"type": "string"
+								}
+							]
+						},
 						"header": [],
 						"url": {
 							"raw": "{{baseUrl}}/files/:fileid",
@@ -478,6 +508,21 @@
 					],
 					"request": {
 						"method": "GET",
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "username",
+									"value": "username",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "password",
+									"type": "string"
+								}
+							]
+						},
 						"header": [],
 						"url": {
 							"raw": "{{baseUrl}}/files",
@@ -553,6 +598,21 @@
 					],
 					"request": {
 						"method": "POST",
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "username",
+									"value": "username",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "password",
+									"type": "string"
+								}
+							]
+						},
 						"header": [
 							{
 								"key": "Content-Type",
@@ -757,6 +817,21 @@
 					],
 					"request": {
 						"method": "GET",
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "username",
+									"value": "username",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "password",
+									"type": "string"
+								}
+							]
+						},
 						"header": [],
 						"url": {
 							"raw": "{{baseUrl}}/files/:fileid",
@@ -923,6 +998,21 @@
 					],
 					"request": {
 						"method": "GET",
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "username",
+									"value": "username",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "password",
+									"type": "string"
+								}
+							]
+						},
 						"header": [],
 						"url": {
 							"raw": "{{baseUrl}}/files",
@@ -983,6 +1073,21 @@
 					],
 					"request": {
 						"method": "DELETE",
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "username",
+									"value": "username",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "password",
+									"type": "string"
+								}
+							]
+						},
 						"header": [],
 						"url": {
 							"raw": "{{baseUrl}}/files/:fileid",
@@ -1138,6 +1243,21 @@
 					],
 					"request": {
 						"method": "GET",
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "username",
+									"value": "username",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "password",
+									"type": "string"
+								}
+							]
+						},
 						"header": [],
 						"url": {
 							"raw": "{{baseUrl}}/files/:fileid",
@@ -1284,6 +1404,21 @@
 					],
 					"request": {
 						"method": "GET",
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "username",
+									"value": "username",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "password",
+									"type": "string"
+								}
+							]
+						},
 						"header": [],
 						"url": {
 							"raw": "{{baseUrl}}/files",
@@ -1359,6 +1494,21 @@
 					],
 					"request": {
 						"method": "POST",
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "username",
+									"value": "username",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "password",
+									"type": "string"
+								}
+							]
+						},
 						"header": [
 							{
 								"key": "Content-Type",
@@ -1545,6 +1695,21 @@
 					],
 					"request": {
 						"method": "POST",
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "username",
+									"value": "username",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "password",
+									"type": "string"
+								}
+							]
+						},
 						"header": [
 							{
 								"key": "Content-Type",
@@ -1718,6 +1883,21 @@
 					],
 					"request": {
 						"method": "DELETE",
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "username",
+									"value": "username",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "password",
+									"type": "string"
+								}
+							]
+						},
 						"header": [],
 						"url": {
 							"raw": "{{baseUrl}}/files/:fileid",
@@ -1879,6 +2059,21 @@
 					],
 					"request": {
 						"method": "POST",
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "username",
+									"value": "username",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "password",
+									"type": "string"
+								}
+							]
+						},
 						"header": [
 							{
 								"key": "Content-Type",
@@ -2055,6 +2250,21 @@
 					],
 					"request": {
 						"method": "GET",
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "username",
+									"value": "username",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "password",
+									"type": "string"
+								}
+							]
+						},
 						"header": [],
 						"url": {
 							"raw": "{{baseUrl}}/files/:fileid",
@@ -2210,6 +2420,21 @@
 					],
 					"request": {
 						"method": "POST",
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "username",
+									"value": "username",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "password",
+									"type": "string"
+								}
+							]
+						},
 						"header": [
 							{
 								"key": "Content-Type",
@@ -2383,6 +2608,21 @@
 					],
 					"request": {
 						"method": "POST",
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "username",
+									"value": "username",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "password",
+									"type": "string"
+								}
+							]
+						},
 						"header": [
 							{
 								"key": "Content-Type",
