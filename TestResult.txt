@@ -1,0 +1,116 @@
+newman
+
+Video Storage Server API Tester
+
+❏ Test
+↳ Healthcheck
+  GET http://0.0.0.0:8080/v1/actuator/health [200 OK, 701B, 242ms]
+  ✓  healthcheck
+
+↳ Remove all files (setup)
+  GET http://0.0.0.0:8080/v1/files [200 OK, 675B, 76ms]
+  ✓  remove all files
+  DELETE http://0.0.0.0:8080/v1/files/639b35342dc93a141657bee3   DELETE http://0.0.0.0:8080/v1/files/639b35342dc93a141657bef0   DELETE http://0.0.0.0:8080/v1/files/639b35342dc93a141657bf20 [204 No Content, 322B, 401ms]
+[204 No Content, 322B, 407ms]
+[204 No Content, 322B, 409ms]
+
+↳ Delete nonexistent file (must be 404)
+  DELETE http://0.0.0.0:8080/v1/files/2raukfn794o [404 Not Found, 355B, 10ms]
+  ✓  response check
+
+↳ Retrieve the random file (must be 404)
+  GET http://0.0.0.0:8080/v1/files/432fsp4n768 [404 Not Found, 374B, 8ms]
+  ✓  response check
+
+↳ Check file list (length must be 0)
+  GET http://0.0.0.0:8080/v1/files [200 OK, 336B, 8ms]
+  ✓  files list length check
+
+↳ Add a new file
+  POST http://0.0.0.0:8080/v1/files [201 Created, 430B, 149ms]
+  ✓  response check
+  ✓  Location header is present
+
+↳ Retrieve the file
+  GET http://0.0.0.0:8080/v1/files/639b3686719876195ab09786 [200 OK, 2.85MB, 53ms]
+  ✓  response check
+  ✓  content type check
+  ┌
+  │ 2848208
+  └
+  ✓  Content size check
+  ┌
+  │ [ 'attachment', ' filename="sample.mp4"' ]
+  │ '"sample.mp4"'
+  └
+  ✓  file name check
+
+↳ Check file list
+  GET http://0.0.0.0:8080/v1/files [200 OK, 448B, 24ms]
+  ✓  files list length check
+  ✓  response JSON contents check
+  ✓  Created date check
+
+↳ Delete the file
+  DELETE http://0.0.0.0:8080/v1/files/639b3686719876195ab09786 [204 No Content, 322B, 12ms]
+  ✓  response check
+
+↳ Retrieve the file again (must be 404)
+  GET http://0.0.0.0:8080/v1/files/639b3686719876195ab09786 [404 Not Found, 374B, 8ms]
+  ✓  response check
+
+↳ Check file list again
+  GET http://0.0.0.0:8080/v1/files [200 OK, 336B, 7ms]
+  ✓  files list length check
+
+↳ Add a new file again
+  POST http://0.0.0.0:8080/v1/files [201 Created, 430B, 96ms]
+  ✓  response check
+  ✓  Location header is present
+
+↳ Add a different file but same name
+  POST http://0.0.0.0:8080/v1/files [201 Created, 430B, 320ms]
+  ✓  response check
+  ✓  dealing with same file check
+
+↳ Delete nonexistent file again(must be 404)
+  DELETE http://0.0.0.0:8080/v1/files/6df9ibkun7 [404 Not Found, 355B, 9ms]
+  ✓  response check
+
+↳ Add a different content-type file
+  POST http://0.0.0.0:8080/v1/files [201 Created, 430B, 177ms]
+  ✓  response check
+  ✓  Location header is present
+
+↳ Retrieve the file and check the content type
+  GET http://0.0.0.0:8080/v1/files/639b3687719876195ab097d0 [200 OK, 6.26MB, 102ms]
+  ✓  response check
+  ✓  content type check
+
+↳ Add a wrong content-type file Copy
+  POST http://0.0.0.0:8080/v1/files [415 Unsupported Media Type, 406B, 35ms]
+  ✓  response check
+
+↳ Add a new file (but doesn't contain any data)
+  POST http://0.0.0.0:8080/v1/files [400 Bad Request, 342B, 17ms]
+  ✓  response check
+
+┌─────────────────────────┬────────────────────┬───────────────────┐
+│                         │           executed │            failed │
+├─────────────────────────┼────────────────────┼───────────────────┤
+│              iterations │                  1 │                 0 │
+├─────────────────────────┼────────────────────┼───────────────────┤
+│                requests │                 21 │                 0 │
+├─────────────────────────┼────────────────────┼───────────────────┤
+│            test-scripts │                 36 │                 0 │
+├─────────────────────────┼────────────────────┼───────────────────┤
+│      prerequest-scripts │                 30 │                 0 │
+├─────────────────────────┼────────────────────┼───────────────────┤
+│              assertions │                 28 │                 0 │
+├─────────────────────────┴────────────────────┴───────────────────┤
+│ total run duration: 2.6s                                         │
+├──────────────────────────────────────────────────────────────────┤
+│ total data received: 9.11MB (approx)                             │
+├──────────────────────────────────────────────────────────────────┤
+│ average response time: 122ms [min: 7ms, max: 409ms, s.d.: 142ms] │
+└──────────────────────────────────────────────────────────────────┘
