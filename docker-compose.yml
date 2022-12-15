@@ -24,4 +24,3 @@ services:
     environment:
       - "SPRING_DATA_MONGODB_URI=mongodb://mongodb:27017/demodb"
       - "SPRING_DATA_MONGODB_HOST=mongodb"
-
