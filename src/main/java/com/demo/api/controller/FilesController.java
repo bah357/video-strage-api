@@ -10,6 +10,7 @@ import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
+import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.util.FileCopyUtils;
 import org.springframework.util.LinkedMultiValueMap;
 import org.springframework.util.MultiValueMap;
@@ -29,6 +30,7 @@ public class FilesController {
 
     private final FileManagementService fileManagementService;
     private final VideoService videoService;
+    private final KafkaTemplate<String, Object> kafkaTemplate;
 
     @PostMapping(consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
     public ResponseEntity<String> uploadFile(@RequestPart(name = "data") MultipartFile multipartFile) throws IOException {
@@ -78,5 +80,9 @@ public class FilesController {
         }
 
         return new ResponseEntity<>("File was successfully removed", HttpStatus.NO_CONTENT);
+    }
+
+    private void publishDataToKafka(String topic, String data) {
+        //kafkaTemplate.se
     }
 }

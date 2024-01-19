@@ -1,10 +1,16 @@
 package com.demo.api.service;
 
+import com.demo.api.domain.Delivery;
 import com.demo.api.domain.FileDomain;
 import com.demo.api.dto.FileResponseDto;
 import com.demo.api.repository.FileRepository;
 import lombok.RequiredArgsConstructor;
 import org.apache.commons.collections4.CollectionUtils;
+import org.springframework.data.domain.Sort;
+import org.springframework.data.mongodb.core.MongoTemplate;
+import org.springframework.data.mongodb.core.aggregation.Aggregation;
+import org.springframework.data.mongodb.core.query.Criteria;
+import org.springframework.data.mongodb.core.query.Query;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -20,6 +26,7 @@ public class FileManagementService {
 
     private final FileRepository fileRepository;
     private final VideoService videoService;
+    private final MongoTemplate mongoTemplate;
 
     public String saveFile(MultipartFile multipartFile) throws IOException {
         var fileid = videoService.addVideo(multipartFile);
@@ -42,6 +49,7 @@ public class FileManagementService {
     }
 
     public String deleteVideoFileByFileid(String fileid) {
+        var list = fileRepository.findOneDistinctByName("sample.mp4");
         var fileDomain = fileRepository.findByFileid(fileid);
         if (fileDomain == null) {
             return null;
@@ -58,5 +66,23 @@ public class FileManagementService {
                 .size(fileDomain.getSize())
                 .created_at(fileDomain.getCreatedAt().toString())
                 .build();
+    }
+
+    public void testMongoTemplate() {
+
+        var aggregation = Aggregation.newAggregation(Aggregation.group("delivery").max("eventTimestamp").as("eventTimestamp"));
+        var results = mongoTemplate.aggregate(aggregation, "delivery",  Delivery.class).getMappedResults();
+        if (CollectionUtils.isNotEmpty(results)) {
+            var first = results.get(0);
+            Criteria criteria = Criteria.where("deliveryId").is(first.getDeliveryId()).and("eventTimestamp").is(first.getEventTimestamp());
+            if (results.size() > 1) {
+                for (int i = 1; i < results.size(); i++) {
+                    var delivery = results.get(i);
+                    criteria.orOperator(Criteria.where("deliveryId").is(delivery.getDeliveryId()).and("eventTimestamp").is(delivery.getEventTimestamp()));
+                }
+            }
+            Query query = new Query(criteria);
+            var deliveryList = mongoTemplate.find(query, Delivery.class);
+        }
     }
 }

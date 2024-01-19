@@ -18,9 +18,12 @@ public class FileDomain {
 
     @Id
     private String id;
+    private String deliveryId;
     private String fileid;
     private String name;
+    private String newName;
     private Long size;
     private Instant createdAt;
+    private Instant eventTimestamp;
 
 }

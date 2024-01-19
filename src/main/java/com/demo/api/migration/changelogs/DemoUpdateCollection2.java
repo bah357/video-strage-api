@@ -8,15 +8,14 @@ import org.springframework.data.mongodb.core.query.Criteria;
 import org.springframework.data.mongodb.core.query.Query;
 import org.springframework.data.mongodb.core.query.Update;
 
-@ChangeLog(order = "00001")
-public class DemoUpdateCollection {
+@ChangeLog(order = "00002")
+public class DemoUpdateCollection2 {
 
-    @ChangeSet(order = "001", id = "test_001", author = "Bah")
+    @ChangeSet(order = "001", id = "test_002", author = "Bah")
     public void updateExistingDeliveryCacheData(MongockTemplate mongockTemplate) {
-        var query = new Query(Criteria.where("fileid").exists(true));
+        var query = new Query(Criteria.where("arr").exists(true));
         var updateDefinition = new Update();
-        updateDefinition.rename("fileid", "fileId");
-        updateDefinition.rename("size", "sizeInByte");
+        updateDefinition.rename("arr[0].code", "arr[0].codeNumber");
         mongockTemplate.updateMulti(query, updateDefinition, FileDomain.class);
     }
 }
